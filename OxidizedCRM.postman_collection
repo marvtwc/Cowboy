@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "57b48b25-0a94-4179-9712-3bcc21bf9d48",
+		"name": "OxidizedCRM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "employees",
+			"item": [
+				{
+					"name": "getCustomersForEmployee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/employees/getCustomers?employee=65c43054079553bd8c0aea20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employees",
+								"getCustomers"
+							],
+							"query": [
+								{
+									"key": "employee",
+									"value": "65c43054079553bd8c0aea20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCustomerForEmployee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employee_id\":\"65cd96278462d5fca36c6602\",\r\n    \"customer_id\": \"65cd926bd53c24b6ad3ca404\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/employees/addCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employees",
+								"addCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerEmployee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"dakotasoles@gmail.com\",\r\n    \"username\":\"pancax\",\r\n    \"password\":\"12345678\",\r\n    \"name\":\"dakota\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeCustomerForEmployee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/employees/removeCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"employees",
+								"removeCustomer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "createCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"name\": \"XYZ Corporation\",\r\n            \"address\": \"456 Elm Street\",\r\n            \"city\": \"Los Angeles\",\r\n            \"state\": \"CA\",\r\n            \"zip\": \"90001\",\r\n            \"billing_address\": \"456 Elm Street\",\r\n            \"billing_city\": \"Los Angeles\",\r\n            \"billing_state\": \"CA\",\r\n            \"billing_zip\": \"90001\",\r\n            \"note\": \"Regular client for electronic products.\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/customers/create/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"customers",
+								"create",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_id\": \"65cd926bd53c24b6ad3ca404\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/customers/delete/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"customers",
+								"delete",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quotes",
+			"item": [
+				{
+					"name": "createQuoteForOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_id\":\"65ce9c2d225b27f808f7b861\",\r\n    \"quote\": {\r\n        \"vendor\" : \"65ceaddf3a9b8f1abe9cd9ac\",\r\n        \"customer\": \"65ce99e232abe7db16fb90a7\",\r\n        \"quote_content\": [\r\n            {\r\n                \"product\":\"65cead433a9b8f1abe9cd9a9\",\r\n                \"quantity\":1\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/quotes/createQuote",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotes",
+								"createQuote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getQuoteDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/quotes/getQuoteDetails?quote=65ceadf43a9b8f1abe9cd9af",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotes",
+								"getQuoteDetails"
+							],
+							"query": [
+								{
+									"key": "quote",
+									"value": "65ceadf43a9b8f1abe9cd9af"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateQuote",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quote_id\":\"\",\r\n    \"quote\": {\r\n        \"vendor\" : \"65ceaddf3a9b8f1abe9cd9ac\",\r\n        \"customer\": \"65ce99e232abe7db16fb90a7\",\r\n        \"quote_content\": [\r\n            {\r\n                \"product\":\"65cead433a9b8f1abe9cd9a9\",\r\n                \"quantity\":3\r\n            },\r\n            {\r\n                \"product\":\"65ceb86435e4a745c00c0957\",\r\n                \"quantity\":5\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/quotes/updateQuote",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotes",
+								"updateQuote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteQuoteFromOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_id\":\"\",\r\n    \"quote_id\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/quotes/deleteQuote",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"quotes",
+								"deleteQuote"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "createOrderForCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/orders/createOrder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders",
+								"createOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrdersForCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/orders/getOrders?customer=65ce99e232abe7db16fb90a7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders",
+								"getOrders"
+							],
+							"query": [
+								{
+									"key": "customer",
+									"value": "65ce99e232abe7db16fb90a7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/orders/getOrderDetails?order=65ce99e832abe7db16fb90a9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"orders",
+								"getOrderDetails"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "65ce99e832abe7db16fb90a9"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"electronics\",\r\n            \"part_number\": \"123456\",\r\n            \"product_name\": \"Smartphone\",\r\n            \"size\": \"5.5 inches\",\r\n            \"amount_per_case\": 20,\r\n            \"cases_per_pallet\": 50,\r\n            \"cost_per_product\": 300,\r\n            \"pallet_per_truck\": 20,\r\n            \"unit_measure\": \"pcs\",\r\n            \"note\": \"Includes charger and earphones.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vendor",
+			"item": [
+				{
+					"name": "createVendor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"name\": \"ABC Electronics\",\r\n            \"address\": \"123 Main Street\",\r\n            \"city\": \"New York\",\r\n            \"state\": \"NY\",\r\n            \"zip\": \"10001\",\r\n            \"note\": \"Main supplier of electronic components.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/vendors/create/vendor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vendors",
+								"create",
+								"vendor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
